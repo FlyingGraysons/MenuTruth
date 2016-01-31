@@ -6,6 +6,7 @@ Made at HackTrin by Henry Wildermuth, Bradley May, and Joshua Doolan
 
 ###Screenshot:
 ![alt text](https://raw.githubusercontent.com/FlyingGraysons/MenuTruth/master/Screenshot.png "Screenshot 1")
+![alt text](https://raw.githubusercontent.com/FlyingGraysons/MenuTruth/master/Screenshot2.png "Screenshot 2")
 
 ###Frameworks
 Several frameworks were used  
