@@ -4,6 +4,9 @@ In swift.
 
 Made at HackTrin by Henry Wildermuth, Bradley May, and Joshua Doolan
 
+###Screenshot:
+![alt text](https://raw.githubusercontent.com/FlyingGraysons/MenuTruth/master/Screenshot.png "Screenshot 1")
+
 ###Frameworks
 Several frameworks were used  
 These could not be included because of their size.  
