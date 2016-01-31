@@ -40,21 +40,22 @@ class Menu:UIViewController, UITableViewDataSource{
             if(toString==""){
                 
             }else{
-            
+            toString=toString?.substringFromIndex(9)
             cell.textLabel?.text=(cell.textLabel?.text)!+(toString! as String)+"kcal"
-                if(toString!.floatValue>1000){
+                print(toString)
+                if(toString!.intValue>1000){
                     toString="1000"
                 }
                 
-                if(toString?.floatValue==0){
+                if(toString?.intValue==0){
                     toString="1";
                 }
                 print(toString!.floatValue)
                 print(toString!.intValue)
                 
                 
-           // cell.textLabel?.textColor=UIColor(red: CGFloat((toString!.floatValue)/Float(1000)), green: 1, blue: 1, alpha: 1)
-             //   cell.backgroundColor=UIColor(red: CGFloat((toString!.floatValue)/Float(1000)), green: 1, blue: 1, alpha: 1)
+               // cell.textLabel?.textColor=UIColor(hue: (1-CGFloat((toString!.floatValue)/Float(1000)))/2, saturation: 1, brightness: 1, alpha: 1)
+                cell.backgroundColor=UIColor(red: 1, green: 0, blue: 0, alpha: CGFloat((toString!.floatValue)/Float(1000)))
             }
             
             
