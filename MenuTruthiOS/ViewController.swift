@@ -39,6 +39,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
     
     func GoToOne(){
         
+        
+        var vc=self.storyboard?.instantiateViewControllerWithIdentifier("menu") as! Menu
+        vc.initiate(list[0])
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
+        
+        
+    }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var vc=self.storyboard?.instantiateViewControllerWithIdentifier("menu") as! Menu
+       
+        
+        vc.initiate(list[indexPath.item])
+        if !(indexPath.item==0){
+        self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -192,15 +210,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITableViewDa
                 }
             }}
     }
+    @IBOutlet weak var Map: MKMapView!
     override func viewDidLoad() {
         
+        
+
         
         
         self.navigationItem.rightBarButtonItem=UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Refresh, target: self, action: "again")
         Table.dataSource=self;
         Table.delegate=self;
         manager.requestAlwaysAuthorization()
-        GMSServices.provideAPIKey("AIzaSyBW5Fw8mRDuMKbOi4gEncmEeFZRg3v35w0")
+    
+        Map.center=CGPoint(x: Map.userLocation.coordinate.latitude, y: Map.userLocation.coordinate.longitude)
+        Map.showsUserLocation=true;GMSServices.provideAPIKey("AIzaSyBW5Fw8mRDuMKbOi4gEncmEeFZRg3v35w0")
         GMSPlacesClient().currentPlaceWithCallback {(placeLikelihoodList: GMSPlaceLikelihoodList?, error: NSError?) -> Void in
             print("IM BACK")
             if let placeLikelihoodList=placeLikelihoodList{

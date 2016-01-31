@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C690FF71C5E863600771309 /* gpx.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 1C690FF61C5E863600771309 /* gpx.gpx */; };
+		1C690FF91C5E909000771309 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C690FF81C5E909000771309 /* Menu.swift */; };
 		1C9534B81C5E575D00C76522 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9534B71C5E575D00C76522 /* MapKit.framework */; };
 		1C9E9DA91C5E641300152F64 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9E9DA81C5E641300152F64 /* Accelerate.framework */; };
 		1C9E9DAB1C5E641900152F64 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C9E9DAA1C5E641900152F64 /* AVFoundation.framework */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		1C690FF61C5E863600771309 /* gpx.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = gpx.gpx; sourceTree = "<group>"; };
+		1C690FF81C5E909000771309 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		1C9534B71C5E575D00C76522 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1C9E9DA81C5E641300152F64 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		1C9E9DAA1C5E641900152F64 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -159,6 +161,7 @@
 			children = (
 				BA4BAEFC1C5E4FF7009D5AB1 /* AppDelegate.swift */,
 				BA4BAEFE1C5E4FF7009D5AB1 /* ViewController.swift */,
+				1C690FF81C5E909000771309 /* Menu.swift */,
 				BA4BAF001C5E4FF7009D5AB1 /* Main.storyboard */,
 				BA4BAF031C5E4FF7009D5AB1 /* Assets.xcassets */,
 				BA4BAF051C5E4FF7009D5AB1 /* LaunchScreen.storyboard */,
@@ -281,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C690FF91C5E909000771309 /* Menu.swift in Sources */,
 				BA4BAEFF1C5E4FF7009D5AB1 /* ViewController.swift in Sources */,
 				BA4BAEFD1C5E4FF7009D5AB1 /* AppDelegate.swift in Sources */,
 			);
