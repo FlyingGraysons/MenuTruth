@@ -19,8 +19,46 @@ class Menu:UIViewController, UITableViewDataSource{
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell=UITableViewCell()
         
-        cell.textLabel?.text=(NSDictionary(dictionary: list).allKeys as! [String])[indexPath.item]+"--------($"+list[(NSDictionary(dictionary: list).allKeys as! [String])[indexPath.item]]!+")"
+        cell.textLabel?.text=(NSDictionary(dictionary: list).allKeys as! [String])[indexPath.item]+"\t($"+list[(NSDictionary(dictionary: list).allKeys as! [String])[indexPath.item]]!+")\t"
         
+        
+        
+        //find calories
+        cell.textLabel?.font=UIFont(name: "Avenir-Light", size: 15)
+        
+        NSURLConnection.sendAsynchronousRequest(NSURLRequest(URL: NSURL(string: "https://www.fatsecret.com/calories-nutrition/search?q=\((NSDictionary(dictionary: list).allKeys as! [String])[indexPath.item])".stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!), queue: NSOperationQueue.mainQueue()) { (response, data, error) -> Void in
+            
+            
+            var string=NSString(data: data!, encoding: NSUTF8StringEncoding) as! String
+             var textScanner = NSScanner(string: string)
+            
+            textScanner.scanUpToString("Calories:", intoString: nil)
+            
+            var toString:NSString?="";
+            textScanner.scanUpToString("kcal", intoString: &toString)
+            
+            if(toString==""){
+                
+            }else{
+            
+            cell.textLabel?.text=(cell.textLabel?.text)!+(toString! as String)+"kcal"
+                if(toString!.floatValue>1000){
+                    toString="1000"
+                }
+                
+                if(toString?.floatValue==0){
+                    toString="1";
+                }
+                print(toString!.floatValue)
+                print(toString!.intValue)
+                
+                
+           // cell.textLabel?.textColor=UIColor(red: CGFloat((toString!.floatValue)/Float(1000)), green: 1, blue: 1, alpha: 1)
+             //   cell.backgroundColor=UIColor(red: CGFloat((toString!.floatValue)/Float(1000)), green: 1, blue: 1, alpha: 1)
+            }
+            
+            
+        }
         return cell;
     }
     
